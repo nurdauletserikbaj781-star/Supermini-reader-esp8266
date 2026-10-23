@@ -56,7 +56,7 @@ Supermini Reader — компактное устройство для чтени
 ## Схема подключения
 
 <div align="center">
-  <img src="docs/wiring.png" alt="Схема подключения" width="760">
+  <img src="wiring.png" alt="Схема подключения" width="760">
 </div>
 
 | Устройство | Контакт | Пин ESP8266 |
@@ -75,7 +75,7 @@ Supermini Reader — компактное устройство для чтени
 
 ## Прошивка
 
-Готовый образ: [`firmware/SuperminiReader_ESP8266.bin`](firmware/SuperminiReader_ESP8266.bin)
+Готовый образ: [`SuperminiReader_ESP8266.bin`](SuperminiReader_ESP8266.bin)
 
 SHA-256:
 
@@ -83,13 +83,13 @@ SHA-256:
 47d84d3c54a70740ed0d415955123d1430fc547cb9e5c4149a6593b6b9139404
 ```
 
-Проверка целостности: `sha256sum -c SHA256SUMS.txt` (из папки `firmware/`).
+Проверка целостности: `sha256sum -c SHA256SUMS.txt` (из папки с файлами).
 
 ### Вариант 1. esptool (Windows / Linux / macOS)
 
 ```bash
 pip install esptool
-esptool.py --port COM3 --baud 460800 write_flash 0x0 firmware/SuperminiReader_ESP8266.bin
+esptool.py --port COM3 --baud 460800 write_flash 0x0 SuperminiReader_ESP8266.bin
 ```
 
 Вместо `COM3` укажите свой порт (в Linux — `/dev/ttyUSB0`, в macOS — `/dev/cu.usbserial-*`).
@@ -126,13 +126,10 @@ esptool.py --port COM3 --baud 460800 write_flash 0x0 firmware/SuperminiReader_ES
 ├── README.md
 ├── CHANGELOG.md
 ├── CONTRIBUTING.md
-├── NOTICE.md                  # сведения о происхождении (форк)
-├── .gitignore
-├── docs/
-│   └── wiring.png             # схема подключения
-└── firmware/
-    ├── SuperminiReader_ESP8266.bin
-    └── SHA256SUMS.txt
+├── NOTICE.md
+├── SuperminiReader_ESP8266.bin   # прошивка
+├── SHA256SUMS.txt                # контрольная сумма прошивки
+└── wiring.png                    # схема подключения
 ```
 
 ## Решение проблем
